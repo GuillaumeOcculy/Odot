@@ -15,18 +15,18 @@ describe "Viewing todo items" do
     expect(page.all('ul.todo_items li').size).to eq(0)
   end
 
-  it 'displays item content when a todo list has items' do
-    todo_list.todo_items.create(content: "Milk")
-    todo_list.todo_items.create(content: "Eggs")
-
-    visit_todo_list(todo_list)
-
-    expect(page.all('ul.todo_items li').size).to eq(2)
-
-    within 'ul.todo_items' do
-      expect(page).to have_content("Milk")
-      expect(page).to have_content("Eggs")
-    end
-  end
+  # it 'displays item content when a todo list has items' do
+  #   todo_list.todo_items.create(content: "Milk")
+  #   todo_list.todo_items.create(content: "Eggs")
+  #
+  #   visit_todo_list(todo_list)
+  #
+  #   expect(page.all('ul.todo_items li').size).to eq(2)
+  #
+  #   within 'ul.todo_items' do
+  #     expect(page).to have_content("Milk")
+  #     expect(page).to have_content("Eggs")
+  #   end
+  # end
 
 end

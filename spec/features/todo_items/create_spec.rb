@@ -9,7 +9,7 @@ describe "Adding todo items" do
     fill_in "Content", with: "Milk"
     click_button "Save"
     expect(page).to have_content("Added todo list item.")
-    within('ul.todo_items') do
+    within dom_id_for(todo_list.todo_items.last) do
       expect(page).to have_content("Milk")
     end
   end

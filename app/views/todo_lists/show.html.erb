@@ -2,7 +2,7 @@
 
 <h2><%= @todo_list.description %></h2>
 
-<% if @todo_list.has_incomplete_items? %>
+<% if @todo_list.has_completed_items? %>
   <h3>Incomplete Items:</h3>
    <ul>
      <%= @todo_list.todo_items.imcomplete.each do |todo_item| %>
@@ -11,7 +11,7 @@
    </ul>
  <% end %>
 
- <% if @todo_list.has_complete_items? %>
+ <% if @todo_list.has_completed_items? %>
    <h3>Complete Items:</h3>
     <ul>
       <%= @todo_list.todo_items.complete.each do |todo_item| %>
