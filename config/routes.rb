@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  namespace :api do
+    resources :todo_lists do
+      resources :todo_items, only: [:index, :show, :create, :update, :destroy]
+    end
+  end
+
   get '/login' => 'user_sessions#new', as: :login
   delete '/logout' => 'user_sessions#destroy', as: :logout
 
